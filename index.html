@@ -129,19 +129,17 @@
                 if (!isNaN(num_of_candidates) && num_of_candidates > 0) {
                     var idx = 0;
                     for (idx = 0; idx < num_of_candidates && idx < candidates[id]['candidates_list'].length; idx++) {
-                            candidates_str += parseInt(idx + 1, 10) + '. ' + candidates[id]['candidates_list'][idx] + ', ';
+                            candidates_str += parseInt(idx + 1, 10) + '. ' + candidates[id]['candidates_list'][idx] + ' ';
                             if (idx != 0 && idx % 5 == 0 && idx != (num_of_candidates - 1))
                                     candidates_str += '<br />';
                     }
                     if (idx < num_of_candidates && idx == candidates[id]['candidates_list'].length) {
                             var my_id = candidates[id]['id'];
-                            candidates_str += '<a target="_blank" href="http://www.bechirot.gov.il/elections19/heb/list/List.aspx?ListId=' + my_id + '">המשך הרשימה</a>, ';
+                            candidates_str += '<a target="_blank" href="http://www.bechirot.gov.il/elections19/heb/list/List.aspx?ListId=' + my_id + '">המשך הרשימה</a> ';
                     }
-
-                    candidates_str += ',';
                 }
 
-                $(content_id).html(candidates_str.replace(', ,', '.'));
+                $(content_id).html(candidates_str);
                 
             };
             $(document).ready(function() {
