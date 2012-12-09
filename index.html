@@ -1,74 +1,189 @@
-<!DOCTYPE html>
-<html>
+<html dir="rtl">
+    <head>
+        <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet" />
+        <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <script type="text/javascript">
+            var exact_mandatim = 120;
+            var parties = {
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Yotamoron : My pages repo" />
+            };
+            var candidates = {
+                'halikud' : { 'display_name' : 'הליכוד ביתנו', 'candidates_list' : 
+                    ['בנימין נתניהו', 'אביגדור ליברמן', 'גדעון סער', 'יאיר שמיר', 'גלעד ארדן', 'סילבן שלום',
+                    'עוזי לנדאו', 'ישראל כ"ץ', 'דני דנון', 'סופיה לנדבר', 'ראובן ריבלין', 'משה יעלון', 
+                    'יצחק אהרונוביץ', 'זאב אלקין', 'ציפי חוטובלי', 'אורלי ליו-אבקסיס', 'יריב ליון', 
+                    'יולי אדלשטיין', 'פניה קירשנבום', 'חיים כץ', 'מירי רגב', 'דוד רותם', 'משה פייגלין',
+                    'יובל שטייניץ', 'רוברט אילטוב', 'צחי הנגבי', 'לימור לבנת', 'חמד עמאר', 'אופיר אקוניס', 
+                    'גילה גמליאל', 'שמעון אוחיון', 'כרמל שאמה-הכהן', 'אלכס מילר', 'ליאון ליטינצקי', 
+                    'דוד ביטן', 'אורי פרג\'', 'יוליה מלינובסקי', 'קטי שטרית', 'איוב קרא', 'סמדר לויטן',
+                    'שוקי אוחנה', 'דוד אמסלם', 'עודד פורר', 'ויקטור אפריימוב', 'יצחק דנינו', 'משה מטלון',
+                    'קרן ברק', 'אברהם נגוסה', 'ליה שמטוב', 'דוד אבן צור'], 'id': '119' },
+                'haavoda' : { 'display_name' : 'העבודה', 'candidates_list' : 
+                    ['שלי יחימוביץ\'', 'יצחק הרצוג', 'איתן כבל', 'מרב מיכאלי', 'בנימין בן אליעזר', 
+                    'יחיאל בר', 'עמר בר לב', 'סתיו שפיר', 'אבישי ברוורמן', 'אראל מרגלית', 
+                    'יצחק שמולי', 'מיכאל רוזנטל', 'מיכל בירן', 'נחמן שי', 'משה מזרחי', 
+                    'דניאל עטר', 'גאלב מגדלה', 'נאדיה חילו', 'נינו אבסדזה', 'יוסף יונה', 
+                    'דניאל בן סימון', 'עפר קורנפלד', 'יחיאל טרופר', 'יונה פריטל', 
+                    'סאלח סעד', 'יריב אופנהיימר', 'גלעד קריב', 'אסתר קירמאיר', 'ברוך זלץ', 
+                    'ערן חרמוני', 'לאה פדידה בן שטרית', 'שלמה שושן', 'נורית צור', 'נחום חופרי', 
+                    'איילת נחמיאס ורבין', 'שולמית סהלו', 'נועם שליט', 'איתן שוורץ', 
+                    'שמעון בראון', 'דנה אורן ינאי'], 'id': '120' },
+                'hatnua' : { 'display_name' : 'התנועה', 'candidates_list' : 
+                    ['ציפי לבני', 'עמרם מצנע', 'עמיר פרץ', 'אלעזר שטרן', 'מאיר שטרית', 
+                    'דוד צור', 'יואל חסון', 'שלמה מולה', 'מירב כהן', 'אורית זוארץ', 'אהרון וולנסי',
+                    'מגלי ווהבה', 'אלון טל', 'רוברט טיבייב', 'אבנר בן זקן', 'רחל אדטו',
+                    'דינה מרגולין-ליבסטר', 'דניאל שק', 'בועז נול'], 'id': '129' },
+                'habait' : { 'display_name' : 'הבית היהודי', 'candidates_list' : 
+                    ['נפתלי בנט', 'יהודה אריאל', 'ניסן סלומינסקי', 'אליהו בן דהן', 'איילת שקד',
+                    'אורי אורבך', 'זבולון קלפה', 'אברהם וורצמן', 'מרדכי יוגב', 
+                    'אורית סטרוק', 'יונתן שטבון', 'שולי מועלם-רפאלי', 'הלל הורוביץ', 
+                    'ירמיהו גימפל', 'נחמן אייל', 'רחמים נסימי', 'יצחק כהן', 
+                    'גילה פינקלשטיין', 'אורי בנק', 'משה דנינו', 'מרק איפראימוב'], 'id': '101' },
+                'shas' : { 'display_name' : 'ש"ס', 'candidates_list' : 
+                    ['אליהו ישי', 'אריה דרעי', 'אריאל אטיאס', 'יצחק כהן', 'משולם נהרי',
+                    'אמנון כהן', 'יעקב מרגי', 'דוד אזולאי', 'יצחק ועקנין', 'ניסים זאב', 
+                    'אברהם מיכאלי', 'יואב בן צור', 'ליאור אדרי', 'עמי אילוז', 'אלי דדון',
+                    'גרשון לוי', 'עמי ביטון', 'בנימין אלחרר'], 'id': '126' },
+                'yesh' : { 'display_name' : 'יש עתיד', 'candidates_list' : 
+                    ['יאיר לפיד', 'שי פירון', 'יעל גרמן', 'מאיר כהן', 'יעקב פרי', 'עפר שלח',
+                    'עליזה לביא', 'יואל רזבוזוב', 'עדי קול', 'קארין אלהרר הרטשטיין', 
+                    'מיקי לוי', 'יאסו סולומון', 'רות קלדרון', 'פנינה תמנו-שטה', 'רינה פרנקל', 
+                    'יפעת קריב', 'דב ליפמן', 'בועז טופורובסקי', 'רונן הופמן', 
+                    'טל אל-על', 'מרק בבטו'], 'id': '102' },
+                'yahadut' : { 'display_name' : 'יהדות התורה', 'candidates_list' : 
+                    ['יעקב ליצמן', 'משה גפני', 'מאיר פרוש', 'אורי מקלב', 'מנחם מוזס',
+                    'ישראל אייכלר', 'יעקב אשר', 'יעקב גוטרמן', 'יצחק ברוידא'], 'id': '130' },
+                'meretz' : { 'display_name' : 'מרצ', 'candidates_list' : 
+                    ['זהבה גלאון', 'אילן גיל און', 'ניצן הורוביץ', 'מיכל רוזין', 
+                    'עיסווי פריג\'', 'תמר זנדברג', 'אבשלום וילן', 'מוסי רז', 'יפעת סולל',
+                    'אורי זכי'], 'id': '117' },
+                'raam' : { 'display_name' : 'רע"מ-תע"ל-מד"ע', 'candidates_list' : 
+                    ['אברהים צרצור', 'אחמד טיבי', 'מסעוד גנאים', 'טלב אבו ערער', 'טלב סאנע', 
+                    'מוחמד כנעאן'], 'id': '125' },
+                'hadash' : { 'display_name' : 'חד"ש', 'candidates_list' : 
+                    ['מוחמד ברכה', 'חנא סויד', 'דב חנין', 'עפו אגבאריה', 'נבילה אספניולי', 
+                    'איימן עודה'], 'id': '114' },
+                'balad' : { 'display_name' : 'בל"ד', 'candidates_list' : 
+                    ['ג\'מאל זחאלקה', 'חנין זועבי', 'באסל ג\'טאס', 'ג\'ומעה אזברגה',
+                    'עבדאל רחים פוקרא', 'היבא יזבק'], 'id': '127' },
+                'otzma' : { 'display_name' : 'עוצמה', 'candidates_list' : 
+                    ['אריה אלדד', 'מיכאל בן ארי', 'ברוך מרזל', 'אריה קינג', 'איתמר בן גביר',
+                    'אלעד כהן', 'שלמה ליינסקי', 'נילי שריון'], 'id': '100' },
+                'kadima' : { 'display_name' : 'קדימה', 'candidates_list' : 
+                    ['שאול מופז', 'ישראל חסון', 'יוחנן פלסנר', 'רונית תירוש', 'שי חרמש',
+                    'יובל צלנר', 'דורון אביטל'], 'id': '123' },
+                'amshalem' : { 'display_name' : 'עם שלם', 'candidates_list' : 
+                    ['חיים אמסלם', 'משה צרפתי', 'ראובן אגסי', 'דניאלה יקירה', 'מקסים אוקנין',
+                    'מרב בן דוד', 'מאיר בן חיים'], 'id': '103' },
+                'eretz' : { 'display_name' : 'ארץ חדשה', 'candidates_list' : 
+                    ['אלדד יניב', 'מרב דוד', 'רן בלייר', 'לינדה ששון', 'ברק סגל', 'אלכסנדרה רבינוביץ\'', 
+                    'דקל-דוד עוזר'], 'id': '118' },
+                'ale' : { 'display_name' : 'עלה ירוק', 'candidates_list' : 
+                    ['ירון לרמן', 'שמרי מסיכה', 'צבי צויג', 'כרמל קני', 'אורן ליבוביץ\'', 'מיכאל גולן',
+                    'ליבי מולד', 'רועי עידן'], 'id': '109' },
+                'or' : { 'display_name' : 'אור', 'candidates_list' : 
+                    ['ירון ידען', 'תומר קרמן', 'שרית יחזקאל'], 'id': '115' },
+                'achim': { 'display_name' : 'אחים אנחנו', 'candidates_list' : 
+                    ['דוד אבבה', 'דורון יהודה', 'גרמא יתמנו'], 'id': '113' },
+                'brit' : { 'display_name' : 'ברית עולם', 'candidates_list' : 
+                    ['עופר ליפשיץ', 'חיים בלייש', 'איילה סבאג'], 'id': '107' },
+                'dor' : { 'display_name' : 'דור בוני הארץ', 'candidates_list' : 
+                    ['אפרים לפיד', 'מידד גיסים', 'יורם קליינר'], 'id': '116' },
+                'daam' : { 'display_name' : 'דעם', 'candidates_list' : 
+                    ['אסמא אגברייה', 'ניר נאדר', 'דני בן שמחון', 'ופא טיארה', 'אורלי פלדהיים'], 'id': '99' },
+                'hayerukim' : { 'display_name' : 'הירוקים', 'candidates_list' : 
+                    ['עמיר מלצר', 'דרור עזרא', 'רז קינסטליך'], 'id': '122' },
+                'haisraelim' : { 'display_name' : 'הישראלים', 'candidates_list' : 
+                    ['דוד קון', 'מרינה שורר', 'אלכסנדר וקסלר'], 'id': '128' },
+                'hapiratim' : { 'display_name' : 'הפיראטים', 'candidates_list' : 
+                    ['אוהד שם טוב', 'נועם כוזר', 'דן בירון'], 'id': '106' },
+                'hatikva' : { 'display_name' : 'התקווה לשינוי', 'candidates_list' : 
+                    ['עאטף קריואוי', 'סעיד בדראן', 'מרתא סלימאן'], 'id': '121' },
+                'haim' : { 'display_name' : 'חיים בכבוד', 'candidates_list' : 
+                    ['רות דנינו', 'יניב למבז', 'סער עמית'], 'id': '132' },
+                'kulanu' : { 'display_name' : 'כולנו חברים', 'candidates_list' : 
+                    ['שרון קנאפו', 'ליאור שי', 'ערן אופיר'], 'id': '112' },
+                'koach' : { 'display_name' : 'כח להשפיע', 'candidates_list' : 
+                    ['אריה סאמרלי', 'אליהו שיפר', 'משה בן משה'], 'id': '104' },
+                'moreshet' : { 'display_name' : 'מורשת אבות', 'candidates_list' : 
+                    ['אילן יר זנבר', 'אמיר שפיצר', 'משה מוזס'], 'id': '108' },
+                'kalkala' : { 'display_name' : 'מפלגת כלכלה', 'candidates_list' : 
+                    ['יוליה שמאלוב-ברקוביץ\'', 'דניאל גולדשטיין', 'בן ציון גולדשטיין'], 'id': '124' },
+                'mitkademet' : { 'display_name' : 'מתקדמת ליברלית-דמוקרטית', 'candidates_list' : 
+                    ['אלכסנדר רדקו', 'יבגני רסין', 'ולרי איבשקין'], 'id': '110' },
+                'netzach' : { 'display_name' : 'נצח', 'candidates_list' : 
+                    ['חיים אפשטיין', 'משה אלמליח', 'דוד בידרמן'], 'id': '131' },
+                'atid' : { 'display_name' : 'עתיד אחד', 'candidates_list' : 
+                    ['שטלצר יחזקאל'], 'id': '111' },
+                'tzedek' : { 'display_name' : 'צדק חברתי', 'candidates_list' : 
+                    ['גד הרן', 'עודד סושרד', 'אלי סתוי'], 'id': '105' },
+            };
+            function fillCandidates(id) {
+                var content_id = '#' + id + '_content';
+                var num_of_candidates = parseInt($('#' + id).val());
+                var candidates_str = '';
+                if (!isNaN(num_of_candidates) && num_of_candidates > 0) {
+                    var idx = 0;
+                    for (idx = 0; idx < num_of_candidates && idx < candidates[id]['candidates_list'].length; idx++) {
+                            candidates_str += parseInt(idx + 1, 10) + '. ' + candidates[id]['candidates_list'][idx] + ', ';
+                            if (idx != 0 && idx % 5 == 0 && idx != (num_of_candidates - 1))
+                                    candidates_str += '<br />';
+                    }
+                    if (idx < num_of_candidates && idx == candidates[id]['candidates_list'].length) {
+                            var my_id = candidates[id]['id'];
+                            candidates_str += '<a target="_blank" href="http://www.bechirot.gov.il/elections19/heb/list/List.aspx?ListId=' + my_id + '">המשך הרשימה</a>, ';
+                    }
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+                    candidates_str += ',';
+                }
 
-    <title>Yotamoron</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/yotamoron/yotamoron">View on GitHub</a>
-
-          <h1 id="project_title">Yotamoron</h1>
-          <h2 id="project_tagline">My pages repo</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/yotamoron/yotamoron/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/yotamoron/yotamoron/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+                $(content_id).html(candidates_str.replace(', ,', '.'));
+                
+            };
+            $(document).ready(function() {
+                    $.each(candidates, function(key, value) {
+                        $('#main').append('<div class="row"> <div class="span8"> <h4><div id="' + key + '_content"></div></h4></div><div class="span4"><h4 id="' + key +'_name">' + value["display_name"] + ':</h4><textarea class="mandat" id="' + key + '"></textarea></div></div>');
+                        });
+                    $('#mandatim').addClass('label');
+                    $('.mandat').each(function(index, element) {
+                        $('#' + element.id).blur(function(bluredElement) {
+                            var mandatim = 0;
+                            $('.mandat').each(function(i, e) {
+                                try {
+                                    mandatim += parseInt($('#' + e.id).val(), 10) || 0;
+                                } catch (e) { console.log(e); }
+                                });
+                            $('#mandatim').removeClass();
+                            if (mandatim < exact_mandatim)
+                                $('#mandatim').addClass('label');
+                            else if (mandatim == exact_mandatim)
+                                $('#mandatim').addClass('label label-success');
+                            else
+                                $('#mandatim').addClass('label label-important');
+                            $('#mandatim').html(mandatim);
+                            fillCandidates(this.id); 
+                            });
+                        });
+                    })
+        </script>
+        <style type="text/css">
+            textarea { width: 60px; height: 30px; resize: none;}
+        </style>
+    </head>
+    <body>
+        <header class="jumbotron" id="overview">
+        <div class="container">
+            <div class="span12">
+                <span><h1 id="mandatim">0</h1></span>
+            </div>
+        </div>
         </header>
-    </div>
+        <div class="container" dir="rtl" id="main">
+        </div>
+    </body>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Yotamoron maintained by <a href="https://github.com/yotamoron">yotamoron</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
 </html>
