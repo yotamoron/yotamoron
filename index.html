@@ -152,8 +152,13 @@
                     $('#mandatim').addClass('label');
                     $('.mandat').each(function(index, element) {
                         $('#' + element.id).blur(function(bluredElement) {
+                            var new_location = '?';
                             var mandatim = 0;
                             $('.mandat').each(function(i, e) {
+                                if ($('#' + e.id).val() != "") {
+                                    new_location += e.id + '=' + $('#' + e.id).val() + '&';
+                                }
+
                                 try {
                                     mandatim += parseInt($('#' + e.id).val(), 10) || 0;
                                 } catch (e) { console.log(e); }
@@ -167,10 +172,17 @@
                                 $('#mandatim').addClass('label label-important');
                             $('#mandatim').html(mandatim);
                             fillCandidates(this.id); 
+                            window.location.hash = new_location;
                             });
                         });
                     $("#main").sortable();
                     $("#main").disableSelection();
+                    var args = window.location.hash.replace("#?", "").split("&");
+                    $.each(args, function(key, value) { 
+                            var kv = value.split("=");
+                            $('#' + kv[0]).val(kv[1]);
+                            $('#' + kv[0]).blur();
+                            });
                     })
         </script>
         <style type="text/css">
