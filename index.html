@@ -147,7 +147,7 @@
             };
             $(document).ready(function() {
                     $.each(candidates, function(key, value) {
-                        $('#main').append('<div class="row"> <div class="span8"> <h4><div id="' + key + '_content"></div></h4></div><div class="span4"><h4 id="' + key +'_name">' + value["display_name"] + ':</h4><textarea class="mandat" id="' + key + '"></textarea></div></div>');
+                        $('#main').append('<div class="span12 alert alert-info"><div class="row"> <div class="span8"> <h4><div id="' + key + '_content"></div></h4></div><div class="span4"><h4 id="' + key +'_name">' + value["display_name"] + ':</h4><textarea class="mandat" id="' + key + '"></textarea></div></div></div>');
                         });
                     $('#mandatim').addClass('label');
                     $('.mandat').each(function(index, element) {
